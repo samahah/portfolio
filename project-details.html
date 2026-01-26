@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details - Samahah Abd Razak</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles for project details page */
+        .project-header {
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+        }
+
+        .project-title-main {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .project-subtitle {
+            font-size: 1.3rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+        }
+
+        .meta-label {
+            color: var(--gray);
+            font-size: 0.85rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .meta-value {
+            color: var(--light);
+            font-weight: 600;
+        }
+
+        .project-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title-small {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .section-text {
+            color: var(--gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .gallery-item {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-caption {
+            padding: 1rem;
+            color: var(--gray);
+            text-align: center;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .tech-tag-detail {
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .tech-tag-detail:hover {
+            background: rgba(99, 102, 241, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .features-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .features-list li {
+            color: var(--gray);
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .features-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .back-btn {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-btn:hover {
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .project-title-main { font-size: 2rem; }
+            .project-subtitle { font-size: 1.1rem; }
+            .section-title-small { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">Samahah</div>
+            <a href="index.html" class="back-btn">← Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <!-- Project Header -->
+    <div class="project-header">
+        <h1 class="project-title-main" id="projectTitle">Loading...</h1>
+        <p class="project-subtitle" id="projectSubtitle"></p>
+        <div class="project-meta">
+            <div class="meta-item">
+                <div class="meta-label">Role</div>
+                <div class="meta-value" id="projectRole"></div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Client</div>
+                <div class="meta-value" id="projectClient"></div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Year</div>
+                <div class="meta-value" id="projectYear"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Content -->
+    <div class="project-content">
+        <!-- Overview Section -->
+        <div class="section">
+            <h2 class="section-title-small">Project Overview</h2>
+            <div id="projectOverview"></div>
+        </div>
+
+        <!-- Technologies Section -->
+        <div class="section">
+            <h2 class="section-title-small">Technologies Used</h2>
+            <div class="tech-stack" id="projectTech"></div>
+        </div>
+
+        <!-- Key Features Section -->
+        <div class="section">
+            <h2 class="section-title-small">Key Features & Responsibilities</h2>
+            <ul class="features-list" id="projectFeatures"></ul>
+        </div>
+
+        <!-- Screenshots/Images Section -->
+        <div class="section" id="screenshotsSection">
+            <h2 class="section-title-small">Project Screenshots</h2>
+            <div class="image-gallery" id="projectImages"></div>
+        </div>
+
+        <!-- Challenges & Solutions Section -->
+        <div class="section" id="challengesSection">
+            <h2 class="section-title-small">Challenges & Solutions</h2>
+            <div id="projectChallenges"></div>
+        </div>
+
+        <!-- Results/Impact Section -->
+        <div class="section" id="resultsSection">
+            <h2 class="section-title-small">Results & Impact</h2>
+            <div id="projectResults"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Samahah Abd Razak. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="data.js"></script>
+    <script>
+        // Get project ID from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectId = urlParams.get('project');
+
+        // Load project data
+        if (projectId && projectsData[projectId]) {
+            const project = projectsData[projectId];
+            
+            // Update page title
+            document.title = `${project.title} - Samahah Abd Razak`;
+            
+            // Update header
+            document.getElementById('projectTitle').textContent = project.title;
+            document.getElementById('projectSubtitle').textContent = project.subtitle;
+            document.getElementById('projectRole').textContent = project.role;
+            document.getElementById('projectClient').textContent = project.client;
+            document.getElementById('projectYear').textContent = project.year;
+            
+            // Update overview
+            const overviewDiv = document.getElementById('projectOverview');
+            project.overview.forEach(paragraph => {
+                const p = document.createElement('p');
+                p.className = 'section-text';
+                p.textContent = paragraph;
+                overviewDiv.appendChild(p);
+            });
+            
+            // Update technologies
+            const techDiv = document.getElementById('projectTech');
+            project.technologies.forEach(tech => {
+                const span = document.createElement('span');
+                span.className = 'tech-tag-detail';
+                span.textContent = tech;
+                techDiv.appendChild(span);
+            });
+            
+            // Update features
+            const featuresList = document.getElementById('projectFeatures');
+            project.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                featuresList.appendChild(li);
+            });
+            
+            // Update images
+            if (project.images) {
+                const imagesDiv = document.getElementById('projectImages');
+                project.images.forEach(image => {
+                    const div = document.createElement('div');
+                    div.className = 'gallery-item';
+                    div.innerHTML = `
+                        <div class="gallery-image">
+                            ${image.src ? `<img src="${image.src}" alt="${image.caption}">` : image.placeholder}
+                        </div>
+                        <div class="gallery-caption">${image.caption}</div>
+                    `;
+                    imagesDiv.appendChild(div);
+                });
+            } else {
+                document.getElementById('screenshotsSection').style.display = 'none';
+            }
+            
+            // Update challenges (if available)
+            if (project.challenges) {
+                const challengesDiv = document.getElementById('projectChallenges');
+                project.challenges.forEach(item => {
+                    const p1 = document.createElement('p');
+                    p1.className = 'section-text';
+                    p1.innerHTML = `<strong>Challenge:</strong> ${item.challenge}`;
+                    challengesDiv.appendChild(p1);
+                    
+                    const p2 = document.createElement('p');
+                    p2.className = 'section-text';
+                    p2.innerHTML = `<strong>Solution:</strong> ${item.solution}`;
+                    challengesDiv.appendChild(p2);
+                });
+            } else {
+                document.getElementById('challengesSection').style.display = 'none';
+            }
+            
+            // Update results (if available)
+            if (project.results) {
+                const resultsDiv = document.getElementById('projectResults');
+                project.results.forEach(paragraph => {
+                    const p = document.createElement('p');
+                    p.className = 'section-text';
+                    p.textContent = paragraph;
+                    resultsDiv.appendChild(p);
+                });
+            } else {
+                document.getElementById('resultsSection').style.display = 'none';
+            }
+            
+        } else {
+            // Project not found, redirect to home
+            document.getElementById('projectTitle').textContent = 'Project Not Found';
+            document.getElementById('projectSubtitle').textContent = 'The project you are looking for does not exist.';
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
