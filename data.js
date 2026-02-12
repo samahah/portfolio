@@ -48,15 +48,15 @@ const experienceData = [
 const skillsData = [
     {
         category: "Backend Development",
-        skills: ["Laravel (PHP)", "ASP.NET", "Java", "C++", "JavaScript", "NodeJS", "NestJS", "TypeScript"]
+        skills: ["PHP (Laravel, Livewire)", "ASP.NET MVC", "ASP.NET Web API", "ASP.NET Core", "C#", "Java", "NodeJS", "NestJS", "TypeScript"]
     },
     {
         category: "Frontend Development",
-        skills: ["Vue.js", "Svelte.js", "Tailwind CSS"]
+        skills: ["Vue.js", "Svelte.js", "JavaScript", "jQuery", "HTML 5 + CSS", "Tailwind CSS"]
     },
     {
         category: "Databases",
-        skills: ["MySQL", "PostgreSQL"]
+        skills: ["MySQL", "PostgreSQL", "MSSQL Server"]
     },
     {
         category: "Testing & QA",
@@ -219,7 +219,7 @@ const projectsData = {
             'A food ordering and delivery management platform serving Domino\'s Pizza operations across Malaysia.',
             'The system handles online orders, delivery tracking, payment processing, inventory management, and franchise operations across multiple locations.'
         ],
-        technologies: ['ASP.NET Core', 'C#', 'MySQL', 'Selenium', 'Cypress', 'REST API'],
+        technologies: ['ASP.NET Core', 'C#', 'MSSQL', 'Visual Studio', 'Selenium', 'Cypress', 'REST API'],
         features: [
             'Developed order management APIs for web and mobile platforms',
             'Built delivery tracking system with real-time status updates',
